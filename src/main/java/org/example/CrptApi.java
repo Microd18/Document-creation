@@ -39,7 +39,12 @@ public class CrptApi {
     private void scheduleRequestLimitReset(TimeUnit timeUnit) {
         scheduler.scheduleAtFixedRate(requestSemaphore::release, 0, 5, timeUnit);
     }
-
+    /**
+     * Метод, который формирует документ с подписью и отправляет его.
+     *
+     * @param document документ для создания и отправки
+     * @param sign     подпись документа
+     */
     public void createAndSendDocument(Document document, String sign) {
         try {
             requestSemaphore.acquire();

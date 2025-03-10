@@ -60,20 +60,26 @@ public class CrptApi {
             requestSemaphore.release();
         }
     }
-
+//test 2
     @Builder
     @RequiredArgsConstructor
     private class SignedDocument {
         private final Document document;
         private final String sign;
     }
-
+//
     private HttpRequest buildRequest(String json) {
         return HttpRequest.newBuilder()
                 .uri(URI.create(URL))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .header("Content-Type", "application/json")
                 .build();
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
     public class Document {

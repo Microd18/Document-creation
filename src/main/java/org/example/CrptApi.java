@@ -60,7 +60,7 @@ public class CrptApi {
             requestSemaphore.release();
         }
     }
-
+//test 2
     @Builder
     @RequiredArgsConstructor
     private class SignedDocument {
@@ -74,6 +74,12 @@ public class CrptApi {
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .header("Content-Type", "application/json")
                 .build();
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
     public class Document {
